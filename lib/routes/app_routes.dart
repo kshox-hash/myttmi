@@ -1,25 +1,24 @@
 import "package:flutter/material.dart";
-
-import "package:myttmi/features/home/presentation/home_screen.dart";
-import "package:myttmi/features/profile/presentation/profile_screen.dart";
-import "package:myttmi/features/ranking/presentation/ranking_screen.dart";
+//LOGIN
+import "package:myttmi/features/auth/presentation/login_screen.dart";
+//WIDGETS
+import "package:myttmi/features/shell/splash_gate.dart";
 import "package:myttmi/features/calendar/presentation/calendar_screen.dart";
 import "package:myttmi/features/stats/presentation/stats_screen.dart";
-
+//PLAYER
+import "package:myttmi/features/tournament/models/tournament_models.dart";
 import "package:myttmi/features/tournament/presentation/tournaments_screen.dart";
 import "package:myttmi/features/tournament/presentation/tournament_create_screen.dart";
 import "package:myttmi/features/tournament/presentation/tournament_detail_screen.dart";
-
-import "package:myttmi/features/shell/splash_gate.dart";
-import "package:myttmi/features/auth/presentation/login_screen.dart";
-
-import "package:myttmi/features/competition/presentation/admin_generate_groups_screen.dart";
 import "package:myttmi/features/competition/presentation/groups_view_screen.dart";
-
+import "package:myttmi/features/home/presentation/home_screen.dart";
+import "package:myttmi/features/profile/presentation/profile_screen.dart";
+import "package:myttmi/features/ranking/presentation/ranking_screen.dart";
+//ADMIN
 import "package:myttmi/features/tournament/presentation/admin_tournaments_screen.dart";
 import "package:myttmi/features/tournament/presentation/admin_tournament_detail_screen.dart";
-
-import "package:myttmi/features/tournament/models/tournament_models.dart";
+import "package:myttmi/features/competition/presentation/admin_generate_groups_screen.dart";
+import "package:myttmi/features/tournament/presentation/admin/admin_tournament_create_screen.dart";
 
 class AppRoutes {
   static const splash = "/splash";
@@ -33,12 +32,12 @@ class AppRoutes {
 
   // tournaments routes
   static const tournaments = "/tournaments";
-  static const tournamentDetail = "/tournament/detail"; // ✅ AGREGADO (faltaba)
+  static const tournamentDetail = "/tournament/detail";
 
   static const adminTournaments = "/admin/tournaments";
   static const adminTournamentDetail = "/admin/tournament/detail";
-
-  static const createTournament = "/admin/tournament/create"; // ✅ con "/" al inicio
+  static const adminCreateTournament = "/admin/tournament/create";
+  static const createTournament = "/admin/tournament/create"; 
 
   // competition routes
   static const adminGenerateGroups = "/competition/admin-generate-groups";
@@ -86,6 +85,9 @@ class AppRoutes {
           builder: (_) => TournamentAdminDetailScreen(tournament: t),
         );
       }
+
+      case adminCreateTournament:
+        return MaterialPageRoute(builder: (_) => const AdminTournamentCreateScreen());
 
       case createTournament:
         return MaterialPageRoute(builder: (_) => const TournamentCreateScreen());

@@ -75,7 +75,7 @@ class AdminShell extends StatelessWidget {
               trailing: const Icon(Icons.chevron_right),
               onTap: () => Navigator.pushNamed(
                 context,
-                AppRoutes.createTournament,
+                AppRoutes.adminCreateTournament,
               ),
             ),
           ),
