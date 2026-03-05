@@ -8,7 +8,6 @@ import "package:myttmi/features/stats/presentation/stats_screen.dart";
 //PLAYER
 import "package:myttmi/features/tournament/models/tournament_models.dart";
 import "package:myttmi/features/tournament/presentation/tournaments_screen.dart";
-import "package:myttmi/features/tournament/presentation/tournament_create_screen.dart";
 import "package:myttmi/features/tournament/presentation/tournament_detail_screen.dart";
 import "package:myttmi/features/competition/presentation/groups_view_screen.dart";
 import "package:myttmi/features/home/presentation/home_screen.dart";
@@ -88,9 +87,6 @@ class AppRoutes {
 
       case adminCreateTournament:
         return MaterialPageRoute(builder: (_) => const AdminTournamentCreateScreen());
-
-      case createTournament:
-        return MaterialPageRoute(builder: (_) => const TournamentCreateScreen());
 
       // ADMIN GENERAR GRUPOS
       case adminGenerateGroups: {
