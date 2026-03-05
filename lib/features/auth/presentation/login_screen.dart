@@ -2,9 +2,10 @@ import "package:flutter/material.dart";
 import "package:myttmi/core/storage/session_storage.dart";
 import "package:myttmi/features/auth/api/auth_api.dart";
 import "package:myttmi/features/auth/presentation/register_screen.dart";
-import "package:myttmi/features/shell/admin_shell.dart";
-import "package:myttmi/features/shell/player_shell.dart";
 import "package:myttmi/features/home/presentation/home_screen.dart";
+
+//ADMIN
+import "package:myttmi/features/admin/home/presentation/admin_home_screen.dart";
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -36,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       if (!mounted) return;
 
-      final next = resp.user.role == "admin" ? const AdminShell() : const HomeScreen();
+      final next = resp.user.role == "admin" ? const AdminHomeScreen() : const HomeScreen();
 
       Navigator.pushAndRemoveUntil(
         context,

@@ -3,8 +3,8 @@ import "package:myttmi/routes/app_routes.dart";
 import "package:myttmi/core/storage/session_storage.dart";
 import "package:myttmi/features/shell/splash_gate.dart";
 
-class AdminShell extends StatelessWidget {
-  const AdminShell({super.key});
+class AdminHomeScreen extends StatelessWidget {
+  const AdminHomeScreen({super.key});
 
   Future<void> _logout(BuildContext context) async {
     final confirm = await showDialog<bool>(

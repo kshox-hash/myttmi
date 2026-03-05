@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
-import "package:myttmi/features/tournament/api/tournament_api.dart";
+import "package:myttmi/features/admin/tournaments/api/admin_tournaments_api.dart";
+import "package:myttmi/features/admin/tournaments/models/admin_tournaments_model.dart";
 import "package:myttmi/core/storage/session_storage.dart";
-import "package:myttmi/features/tournament/models/tournament_models.dart";
 import "package:myttmi/routes/app_routes.dart";
 
 class AdminTournamentsScreen extends StatefulWidget {
@@ -12,7 +12,8 @@ class AdminTournamentsScreen extends StatefulWidget {
 }
 
 class _AdminTournamentsScreenState extends State<AdminTournamentsScreen> {
-  final _api = TournamentApi();
+  final _api = AdminTournamentApi();
+
   Future<List<Tournament>>? _future;
 
   @override
@@ -30,8 +31,9 @@ class _AdminTournamentsScreenState extends State<AdminTournamentsScreen> {
       return;
     }
 
+
     setState(() {
-      _future = _api.fetchMyTournaments(createdBy: id);
+      _future = _api.adminGetMyTournaments(createdBy: id);
     });
   }
 

@@ -1,8 +1,10 @@
 import "package:flutter/material.dart";
 import "package:myttmi/features/tournament/api/tournament_api.dart";
-import "package:myttmi/features/tournament/models/tournament_models.dart";
 import "package:myttmi/routes/app_routes.dart";
 import "package:myttmi/core/storage/session_storage.dart";
+
+//admin
+import "package:myttmi/features/admin/tournaments/models/admin_tournaments_model.dart";
 class TournamentDetailScreen extends StatefulWidget {
   final Tournament tournament;
 

@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:myttmi/features/tournament/api/admin_tournament_api.dart";
+import "package:myttmi/features/admin/tournaments/api/admin_tournaments_api.dart";
 import "package:myttmi/core/storage/session_storage.dart";
 
 class AdminTournamentCreateScreen extends StatefulWidget {

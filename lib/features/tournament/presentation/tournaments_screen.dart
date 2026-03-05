@@ -1,9 +1,8 @@
 import "package:flutter/material.dart";
 import "package:myttmi/core/constants/app_colors.dart";
 import "package:myttmi/features/tournament/api/tournament_api.dart";
-import "package:myttmi/features/tournament/models/tournament_models.dart";
-import "package:myttmi/features/tournament/presentation/admin_tournament_detail_screen.dart";
 import "package:myttmi/features/tournament/presentation/tournament_detail_screen.dart";
+import "package:myttmi/features/admin/tournaments/models/admin_tournaments_model.dart";
 
 
 class TournamentsScreen extends StatefulWidget {

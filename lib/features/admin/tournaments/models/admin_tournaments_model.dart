@@ -1,3 +1,5 @@
+
+
 class TournamentCategory {
   final String idCategory;
   final String categoryName;
@@ -26,7 +28,7 @@ class TournamentCategory {
     );
   }
 
-  // 👇 Esto es MUY importante para poder actualizar el estado en la UI
+  // actualizar el estado en la UI
   TournamentCategory copyWith({
     bool? isEnrolled,
   }) {

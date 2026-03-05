@@ -3,8 +3,7 @@ import "package:flutter/material.dart";
 import "package:http/http.dart" as http;
 import "package:myttmi/core/constants/app_config.dart";
 import "package:myttmi/core/storage/session_storage.dart";
-import "package:myttmi/features/tournament/models/tournament_models.dart";
-
+import "package:myttmi/features/admin/tournaments/models/admin_tournaments_model.dart";
 
 /// ===============================================================
 /// API utilizada exclusivamente por el ADMINISTRADOR del torneo

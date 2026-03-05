@@ -4,7 +4,8 @@ import "package:http/http.dart" as http;
 
 import "package:myttmi/core/constants/app_config.dart";
 import "package:myttmi/core/storage/session_storage.dart";
-import "package:myttmi/features/tournament/models/tournament_models.dart";
+//admin
+import "package:myttmi/features/admin/tournaments/models/admin_tournaments_model.dart";
 
 class TournamentApi {
   final String baseUrl;
@@ -12,11 +13,11 @@ class TournamentApi {
   TournamentApi({String? baseUrl}) : baseUrl = baseUrl ?? AppConfig.baseUrl;
 
   // -----------------------
-  // LISTAR TORNEOS (✅ filtros opcionales)
+  // LISTAR TORNEOS (filtros opcionales)
   // -----------------------
   Future<List<Tournament>> fetchTournaments({
     String? q,
-    String? city, // ✅ NUEVO
+    String? city,
   }) async {
     final params = <String, String>{};
 
@@ -45,7 +46,7 @@ class TournamentApi {
   }
 
   // -----------------------
-  // CREAR TORNEO (✅ agrega city)
+  // CREAR TORNEO 
   // -----------------------
   Future<void> createTournament({
     required String createdBy,
@@ -55,7 +56,7 @@ class TournamentApi {
     required DateTime eventDate,
     TimeOfDay? eventTime,
     required List<Map<String, dynamic>> categories,
-    String? city, // ✅ NUEVO
+    String? city,
   }) async {
     final token = await SessionStorage().getToken();
 
@@ -77,8 +78,6 @@ class TournamentApi {
       "event_date": fmtDate(eventDate),
       "event_time": fmtTime(eventTime),
       "categories": categories,
-
-      // ✅ NUEVO
       "city": (city ?? "").trim().isNotEmpty ? city!.trim() : null,
     };
 
@@ -102,7 +101,7 @@ class TournamentApi {
   }
 
   // -----------------------
-  // SUSCRIBIRSE A CATEGORÍA (igual)
+  // SUSCRIBIRSE A CATEGORÍA 
   // -----------------------
   Future<void> subscribeToCategory({
     required String tournamentId,

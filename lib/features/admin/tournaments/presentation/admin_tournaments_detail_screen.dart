@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import "package:myttmi/features/tournament/api/tournament_api.dart";
-import "package:myttmi/features/tournament/models/tournament_models.dart";
+import "package:myttmi/features/admin/tournaments/api/admin_tournaments_api.dart";
+import "package:myttmi/features/admin/tournaments/models/admin_tournaments_model.dart";
 
 class TournamentAdminDetailScreen extends StatefulWidget {
   final Tournament tournament;
@@ -11,7 +11,7 @@ class TournamentAdminDetailScreen extends StatefulWidget {
 }
 
 class _TournamentAdminDetailScreenState extends State<TournamentAdminDetailScreen> {
-  final _api = TournamentApi();
+  final _api = AdminTournamentApi();
   late final String _tid;
   Future<List<Map<String, dynamic>>>? _future;
 
@@ -24,7 +24,7 @@ class _TournamentAdminDetailScreenState extends State<TournamentAdminDetailScree
 
   void _load() {
     setState(() {
-      _future = _api.fetchTournamentEnrollments(tournamentId: _tid);
+      _future = _api.adminGetEnrollments(tournamentId: _tid);
     });
   }
 
@@ -47,7 +47,7 @@ class _TournamentAdminDetailScreenState extends State<TournamentAdminDetailScree
 
     if (ok != true) return;
 
-    await _api.removeEnrollment(tournamentId: _tid, userId: userId, categoryId: catId);
+    await _api.adminRemoveEnrollment(tournamentId: _tid, userId: userId, categoryId: catId);
     _load();
 
     if (!mounted) return;

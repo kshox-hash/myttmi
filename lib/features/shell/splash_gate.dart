@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import "package:myttmi/core/storage/session_storage.dart";
 import "package:myttmi/features/auth/presentation/login_screen.dart";
-import "package:myttmi/features/shell/admin_shell.dart";
-import "package:myttmi/features/shell/player_shell.dart";
+import "package:myttmi/features/admin/home/presentation/admin_home_screen.dart";
+
 import "package:myttmi/features/home/presentation/home_screen.dart";
 
 
@@ -38,12 +38,12 @@ class _SplashGateState extends State<SplashGate> {
     if (role == "admin") {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const AdminShell()),
+        MaterialPageRoute(builder: (_) => const AdminHomeScreen()),
       );
     } else {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const  HomeScreen()),
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
       );
     }
   }
